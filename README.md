@@ -1,13 +1,13 @@
 # Score Comments (MuseScore 4 Plugin)
 
-A simple dockable panel plugin for MuseScore 4 that allows you to add internal annotations, notes, or comments to your score project. The comments are saved within the score's metadata and are not visible on the printed or exported sheet music.
+A simple dockable panel plugin for MuseScore 4 that allows you to add internal annotations, notes, or comments to your score project. The comments are saved within a hidden text element attached to the score and are not visible on the printed or exported sheet music.
 
 ## Features
 
 *   **Dockable Panel:** Integrates seamlessly into the MuseScore 4 interface.
-*   **Auto-saving:** Comments are automatically saved to the score's metadata as you type.
+*   **Auto-saving & Undo Support:** Comments are automatically saved to the score as a hidden element as you type, allowing native (Undo/Redo) integration.
 *   **Score Sync:** The text area automatically updates to show the comments of the currently active score tab.
-*   **Invisible on Print:** Comments are stored internally in the `comments` metadata tag, keeping your printed score clean.
+*   **Invisible on Print:** Comments are stored internally as an invisible `StaffText` element, keeping your printed score clean.
 
 ## Installation
 
