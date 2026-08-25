@@ -11,8 +11,8 @@ A simple dockable panel plugin for MuseScore 4 that allows you to add internal a
 
 ## Installation
 
-1.  Download the `Score Comments.qml` file.
-2.  Place the file in your MuseScore 4 plugins directory. The typical locations are:
+1.  Download the `Score Comments.qml` file and the `Score Comments.png` icon file.
+2.  Place both files in your MuseScore 4 plugins directory. The typical locations are:
     *   **Windows:** `%HOMEPATH%\Documents\MuseScore4\Plugins`
     *   **macOS:** `~/Documents/MuseScore4/Plugins`
     *   **Linux:** `~/Documents/MuseScore4/Plugins`
