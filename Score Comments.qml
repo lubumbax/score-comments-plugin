@@ -83,6 +83,27 @@ MuseScore {
             if (curScore && curScore.metaTag("comments") !== textArea.text) {
                 curScore.startCmd();
                 curScore.setMetaTag("comments", textArea.text);
+                
+                // Workaround to force the score to be marked as modified (dirty).
+                // In MuseScore 4, metadata changes alone don't trigger the dirty flag.
+                // We toggle the visibility of the first score element back and forth.
+                var cursor = curScore.newCursor();
+                cursor.rewind(0); // Cursor.SCORE_START
+                var found = false;
+                while (cursor.segment && !found) {
+                    for (var track = 0; track < curScore.ntracks; track++) {
+                        var el = cursor.segment.elementAt(track);
+                        if (el) {
+                            var v = el.visible;
+                            el.visible = !v;
+                            el.visible = v;
+                            found = true;
+                            break;
+                        }
+                    }
+                    cursor.next();
+                }
+                
                 curScore.endCmd();
             }
         }
